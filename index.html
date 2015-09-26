@@ -61,7 +61,7 @@
        */
       function listFiles() {
         var request = gapi.client.drive.files.list({
-            'maxResults': 10
+            'maxResults': 10000
           });
 
           request.execute(function(resp) {
