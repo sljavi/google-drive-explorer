@@ -7,8 +7,8 @@ Just a google drive explorer example
 
 ## Development setup
 
-1. `git clone git@github.com:sljavi/google-drive-explorer.git`
-2. You can serve and test the app under `http://localhost[:port]/*`
+1. Clone the repo `git clone git@github.com:sljavi/google-drive-explorer.git`
+2. You can serve and test the app under `http://localhost:8000/*`
 3. Don't push into the `master` branch unless you want deploy your code changes
 
 ## Deploy
