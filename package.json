@@ -28,13 +28,8 @@
   },
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
   "devDependencies": {
-    "css-loader": "^0.19.0",
     "eslint": "^1.5.1",
     "eslint-plugin-react": "^3.4.2",
-    "file-loader": "^0.8.4",
-    "jsx-loader": "^0.13.2",
-    "style-loader": "^0.12.4",
-    "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0",
     "plato": "git+ssh://git@github.com:sljavi/plato.git"
   },
@@ -42,12 +37,17 @@
     "async": "^1.4.2",
     "bootstrap": "^3.3.5",
     "classnames": "^2.1.5",
+    "css-loader": "^0.19.0",
     "express": "^4.13.3",
     "google-client-api": "^1.0.4",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "path": "^0.12.7",
     "react": "^0.13.3",
-    "react-loader": "^1.4.0"
+    "react-loader": "^1.4.0",
+    "webpack": "^1.12.2",
+    "file-loader": "^0.8.4",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.12.4"
   }
 }
