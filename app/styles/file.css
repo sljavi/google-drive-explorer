@@ -1,0 +1,11 @@
+.file, .file:link, .file:visited {
+    padding: 0.5em 0;
+    cursor: pointer;
+    display: block;
+    color: #333;
+}
+.file:hover,  .file:active {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}

@@ -1,0 +1,10 @@
+.folder {
+
+}
+.folder .folder-name {
+    padding: 0.5em 0;
+    cursor: pointer;
+}
+.folder .folder-name:hover {
+    font-weight: bold;
+}
