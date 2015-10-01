@@ -30,7 +30,6 @@
   "devDependencies": {
     "eslint": "^1.5.1",
     "eslint-plugin-react": "^3.4.2",
-    "webpack-dev-server": "^1.12.0",
     "plato": "git+ssh://git@github.com:sljavi/plato.git"
   },
   "dependencies": {
@@ -48,6 +47,7 @@
     "webpack": "^1.12.2",
     "file-loader": "^0.8.4",
     "jsx-loader": "^0.13.2",
-    "style-loader": "^0.12.4"
+    "style-loader": "^0.12.4",
+    "webpack-dev-server": "^1.12.0"
   }
 }
