@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
-    "build": "webpack --config ./webpack-prod.config.js --progress --colors",
     "start": "node server.js",
     "report": "./node_modules/plato/bin/plato -r -d ./build/report -e .eslintrc app/*",
-    "postinstall": "npm run report && npm run build"
+    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
