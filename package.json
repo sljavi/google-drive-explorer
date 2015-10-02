@@ -4,7 +4,7 @@
   "description": "Just a google drive explorer example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 1",
+    "test": "echo \"No test specified\" && exit 0",
     "start": "node server.js",
     "report": "./node_modules/plato/bin/plato -r -d ./build/report -e .eslintrc app/*",
     "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors"
