@@ -2,18 +2,9 @@ language: node_js
 node_js:
   - "0.12"
 
-before_script:
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - npm install
-
 # By default, Travis runs "npm install" to install dependencies.
 
 # Run the tests & submit code coverage data to Coveralls
 script: ./travis-test.sh
 
 sudo: false   # use container-based architecture; starts up faster
-
-addons:
-  ssh_known_hosts:
-    - github.com
-    - ssh.github.com

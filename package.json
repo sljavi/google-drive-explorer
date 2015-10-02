@@ -37,7 +37,7 @@
     "mocha": "^2.3.3",
     "mocha-jsdom": "^1.0.0",
     "mocha-lcov-reporter": "^1.0.0",
-    "plato": "git+ssh://git@github.com:sljavi/plato.git"
+    "plato": "sljavi/plato"
   },
   "dependencies": {
     "async": "1.4.2",
