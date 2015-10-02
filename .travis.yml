@@ -8,3 +8,6 @@ node_js:
 script: ./travis-test.sh
 
 sudo: false   # use container-based architecture; starts up faster
+
+addons:
+  ssh_known_hosts: github.com
