@@ -28,7 +28,7 @@
       "shelljs":false
    },
    "globals":{
-
+      "describe", "it"
    },
    "plugins":[
       "react"

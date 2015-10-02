@@ -4,7 +4,7 @@
   "description": "Just a google drive explorer example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
+    "test": "mocha --compilers .:tests/compiler.js tests/*-test.js",
     "start": "node server.js",
     "report": "./node_modules/plato/bin/plato -r -d ./build/report -e .eslintrc app/*",
     "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors"
@@ -28,8 +28,15 @@
   },
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
   "devDependencies": {
+    "blanket": "^1.1.7",
+    "coveralls": "^2.11.4",
     "eslint": "1.5.1",
     "eslint-plugin-react": "3.5.1",
+    "glob": "^5.0.15",
+    "jsdom": "^3.1.1",
+    "mocha": "^2.3.3",
+    "mocha-jsdom": "^1.0.0",
+    "mocha-lcov-reporter": "^1.0.0",
     "plato": "git+ssh://git@github.com:sljavi/plato.git"
   },
   "dependencies": {
@@ -38,16 +45,28 @@
     "classnames": "2.1.5",
     "css-loader": "0.19.0",
     "express": "4.13.3",
+    "file-loader": "0.8.4",
     "google-client-api": "1.0.4",
     "jquery": "2.1.4",
+    "jsx-loader": "0.13.2",
     "lodash": "3.10.1",
     "path": "0.12.7",
     "react": "0.13.3",
     "react-loader": "1.4.0",
-    "webpack": "1.12.2",
-    "file-loader": "0.8.4",
-    "jsx-loader": "0.13.2",
+    "react-tools": "^0.13.3",
     "style-loader": "0.12.4",
+    "webpack": "1.12.2",
     "webpack-dev-server": "1.12.0"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "app",
+      "data-cover-never": [
+        "build",
+        "node_modules",
+        "tests"
+      ],
+      "loader": "../../../tests/blanket-stub-jsx.js"
+    }
   }
 }
