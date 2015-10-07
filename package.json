@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
   "devDependencies": {
-    "mocha-lcov-reporter": "^1.0.0"
+
   },
   "dependencies": {
     "blanket": "^1.1.7",
