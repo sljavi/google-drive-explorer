@@ -1,3 +1,7 @@
+[![Coverage Status](https://coveralls.io/repos/sljavi/google-drive-explorer/badge.svg?branch=master&service=github)](https://coveralls.io/github/sljavi/google-drive-explorer?branch=master)
+
+[![CI Status](https://travis-ci.org/sljavi/google-drive-explorer.svg)](https://travis-ci.org/sljavi/google-drive-explorer)
+
 # google-drive-explorer
 Just a google drive explorer example
 
