@@ -10,7 +10,7 @@
     "plato": "node ./scripts/transform-jsx.js && npm run report",
     "report": "./node_modules/plato/bin/plato -r -d ./build/report -e .plato.eslintrc tmp/app/*",
     "build": "webpack --config ./webpack-prod.config.js --progress --colors",
-    "postinstall": "npm run build && npm run coverage",
+    "postinstall": "npm run build",
     "coverage": "mocha --recursive --compilers .:tests/compiler.js --require blanket --reporter html-cov tests/app/* > build/coverage.html"
   },
   "repository": {
