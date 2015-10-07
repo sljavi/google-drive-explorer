@@ -4,7 +4,7 @@
   "description": "Just a google drive explorer example",
   "main": "index.js",
   "scripts": {
-    "test": "npm run transform-jsx && mocha --recursive --compilers .:tests/compiler.js tests/app/*",
+    "test": "npm run transform-jsx && mocha --recursive tests/app/*",
     "watch": "webpack-dev-server --colors --progress --content-base build/",
     "start": "node ./scripts/server.js",
     "transform-jsx": "node ./scripts/transform-jsx.js",
