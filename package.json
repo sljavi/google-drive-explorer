@@ -15,7 +15,7 @@
     "coverage": "npm run transform-jsx && npm run coverage-report",
     "coverage-report": "mocha --recursive --require blanket --reporter html-cov tests/app/* > build/coverage.html",
     "lint": "eslint app/**/*.js scripts/**/*.js tests/**/*.js",
-    "coveralls": "mocha --recursive --require blanket --reporter mocha-lcov-reporter ./tests/app/* | ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "mocha --recursive --require blanket --reporter mocha-lcov-reporter tests/app/* | ./node_modules/coveralls/bin/coveralls.js",
     "travis": "npm run test && npm run lint && npm run coveralls"
   },
   "repository": {
