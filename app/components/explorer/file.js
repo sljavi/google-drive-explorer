@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-require('./../../styles/file.css');
+require('../../styles/file.css');
 
 module.exports = React.createClass({
     displayName: 'File',

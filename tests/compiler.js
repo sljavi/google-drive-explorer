@@ -13,3 +13,7 @@ require.extensions['.js'] = function(module, filename) {
 
     return module._compile(transformer.transform(filename), filename);
 };
+
+require.extensions['.css'] = function(module, filename) {
+    return module._compile(transformer.transform(__dirname + '/null.js'), filename);
+};

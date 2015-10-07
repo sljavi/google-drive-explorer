@@ -8,6 +8,10 @@ var
     Header = require('./header'),
     $ = require('jquery');
 
+require('bootstrap.css');
+require('bootstrap-theme.css');
+require('../styles/theme.css');
+
 module.exports = React.createClass({
     displayName: 'Main',
     propTypes: {

@@ -3,10 +3,10 @@
 var
     React = require('react'),
     _ = require('lodash'),
-    FileList = require('./file-list.jsx'),
+    FileList = require('./file-list'),
     Loader = require('react-loader');
 
-require('./../../styles/explorer.css');
+require('../../styles/explorer.css');
 
 module.exports = React.createClass({
     displayName: 'Explorer',

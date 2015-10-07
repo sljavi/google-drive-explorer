@@ -8,8 +8,8 @@ var
     path = require('path'),
     transformer = require('./jsx-stub-transform');
 
-
 module.exports = function(blanket) {
+
     var origJs = require.extensions['.js'];
 
     require.extensions['.js'] = function(localModule, filename) {
@@ -59,6 +59,6 @@ module.exports = function(blanket) {
             }
         }
 
-        require('../' + pathFromRoot);
+        require(path.resolve(pathFromRoot));
     });
 };

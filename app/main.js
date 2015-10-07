@@ -1,14 +1,10 @@
 'use strict';
 
-require('bootstrap.css');
-require('bootstrap-theme.css');
-require('./styles/theme.css');
-
 var
     async = require('async'),
-    React = require('react'),
-    Main = require('./components/main.jsx'),
-    googleClient = require('./lib/google-client.js');
+    Main = require('./components/main'),
+    googleClient = require('./lib/google-client'),
+    React = require('react/addons');
 
 var mainComponent;
 
@@ -77,7 +73,9 @@ function initializeApp() {
         loadingFiles: false,
         loadingClient: false
     };
+
     mainComponent = React.render(<Main {...props} />, document.body);
+
     loadClient();
 }
 

@@ -6,7 +6,7 @@ var
 
 var FileList;
 
-require('./../../styles/folder.css');
+require('../../styles/folder.css');
 
 module.exports = React.createClass({
     displayName: 'Folder',
@@ -16,7 +16,7 @@ module.exports = React.createClass({
         opened: React.PropTypes.bool.isRequired
     },
     componentWillMount: function() {
-        FileList = require('./file-list.jsx');
+        FileList = require('./file-list');
     },
     getInitialState: function() {
         return {

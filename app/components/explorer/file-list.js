@@ -2,12 +2,12 @@
 
 var
     React = require('react'),
-    File = require('./file.jsx'),
-    Folder = require('./folder.jsx'),
+    File = require('./file'),
+    Folder = require('./folder'),
     _ = require('lodash'),
     cx = require('classnames');
 
-require('./../../styles/file-list.css');
+require('../../styles/file-list.css');
 
 module.exports = React.createClass({
     displayName: 'FileList',

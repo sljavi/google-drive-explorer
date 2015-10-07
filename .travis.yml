@@ -5,6 +5,6 @@ node_js:
 # By default, Travis runs "npm install" to install dependencies.
 
 # Run the tests & submit code coverage data to Coveralls
-script: ./travis-test.sh
+script: ./scripts/travis-test.sh
 
 sudo: false   # use container-based architecture; starts up faster

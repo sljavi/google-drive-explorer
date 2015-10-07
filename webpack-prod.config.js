@@ -3,14 +3,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: path.join(__dirname, '/app/main.jsx'),
+    entry: path.join(__dirname, '/app/main.js'),
     resolve: {
         alias: {
             bootstrap: path.join(__dirname, '/node_modules/bootstrap/js/bootstrap.min.js'),
             'bootstrap.css': path.join(__dirname, '/node_modules/bootstrap/dist/css/bootstrap.min.css'),
             'bootstrap-theme.css': path.join(__dirname, '/node_modules/bootstrap/dist/css/bootstrap-theme.min.css')
         },
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js']
     },
     output: {
         path: path.join(__dirname, '/build'),
@@ -31,7 +31,7 @@ module.exports = {
             test: /\.css$/,
             loaders: ['style', 'css']
         }, {
-            test: /\.jsx$/,
+            test: /\.js$/,
             loader: 'jsx-loader'
         },
         {
