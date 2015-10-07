@@ -16,7 +16,7 @@
     "coverage-report": "mocha --recursive --require blanket --reporter html-cov tests/app/* > build/coverage.html",
     "lint": "eslint app/**/*.js scripts/**/*.js tests/**/*.js",
     "coveralls": "mocha --recursive --require blanket --reporter mocha-lcov-reporter ./tests/app/* | ./node_modules/coveralls/bin/coveralls.js",
-    "travis": "npm run test && npm run lint"
+    "travis": "npm run test && npm run lint && npm run coveralls"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
   "devDependencies": {
-    
+    "mocha-lcov-reporter": "^1.0.0"
   },
   "dependencies": {
     "blanket": "^1.1.7",
@@ -81,7 +81,8 @@
         "debug": false
       },
       "data-cover-reporter-options": {
-        "relativepath": true
+        "relativepath": false,
+        "shortnames": false
       }
     }
   }
