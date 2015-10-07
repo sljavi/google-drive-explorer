@@ -4,14 +4,19 @@
   "description": "Just a google drive explorer example",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --compilers .:tests/compiler.js tests/app/*",
+    "test": "npm run transform-jsx && mocha --recursive --compilers .:tests/compiler.js tests/app/*",
     "watch": "webpack-dev-server --colors --progress --content-base build/",
     "start": "node ./scripts/server.js",
-    "plato": "node ./scripts/transform-jsx.js && npm run report",
-    "report": "./node_modules/plato/bin/plato -r -d ./build/report -e .plato.eslintrc tmp/app/*",
+    "transform-jsx": "node ./scripts/transform-jsx.js",
+    "plato": "npm run transform-jsx && npm run plato-report",
+    "plato-report": "./node_modules/plato/bin/plato -r -d ./build/report -e .plato.eslintrc tmp/app/*",
     "build": "webpack --config ./webpack-prod.config.js --progress --colors",
-    "postinstall": "npm run build",
-    "coverage": "mocha --recursive --compilers .:tests/compiler.js --require blanket --reporter html-cov tests/app/* > build/coverage.html"
+    "postinstall": "npm run build && npm run coverage",
+    "coverage": "npm run transform-jsx && npm run coverage-report",
+    "coverage-report": "mocha --recursive --require blanket --reporter html-cov tests/app/* > build/coverage.html",
+    "lint": "eslint app/**/*.js scripts/**/*.js tests/**/*.js",
+    "coveralls": "mocha --require blanket --reporter mocha-lcov-reporter tests/app/* | coveralls",
+    "travis": "npm run test && npm run coveralls && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -34,8 +39,6 @@
   "devDependencies": {
     "blanket": "^1.1.7",
     "coveralls": "^2.11.4",
-    "eslint": "1.6.0",
-    "eslint-plugin-react": "3.5.1",
     "glob": "^5.0.15",
     "jsdom": "^3.1.1",
     "mocha": "^2.3.3",
@@ -49,6 +52,8 @@
     "classnames": "2.1.5",
     "css-loader": "0.19.0",
     "express": "4.13.3",
+    "eslint": "1.6.0",
+    "eslint-plugin-react": "3.5.1",
     "file-loader": "0.8.4",
     "google-client-api": "1.0.4",
     "jquery": "2.1.4",
@@ -65,7 +70,7 @@
   },
   "config": {
     "blanket": {
-      "pattern": "app",
+      "pattern": "tmp/app/",
       "data-cover-never": [
         "build",
         "node_modules",
@@ -77,8 +82,7 @@
       "data-cover-reporter-options": {
         "shortnames": true,
         "relativepath": true
-      },
-      "loader": "../../../tests/blanket-stub-jsx.js"
+      }
     }
   }
 }

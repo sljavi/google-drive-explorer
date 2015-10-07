@@ -4,7 +4,7 @@ var
     jsdom = require('mocha-jsdom'),
     React = require('react/addons'),
     _ = require('lodash'),
-    File = require('../../../../app/components/explorer/file.js');
+    File = require('../../../../tmp/app/components/explorer/file.js');
 
 var TestUtils = React.addons.TestUtils;
 

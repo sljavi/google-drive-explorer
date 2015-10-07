@@ -6,10 +6,11 @@ var
     glob = require('glob'),
     async = require('async'),
     path = require('path'),
+    _ = require('lodash'),
     mkpath = require('mkpath');
 
 function getJsxFiles(cb) {
-    glob('../app/**/*.js', {}, cb);
+    glob(path.join(__dirname, '../app/**/*.js'), {}, cb);
 }
 
 function readFile(file, cb) {
@@ -23,12 +24,19 @@ function transformFile(file, fileContent, cb) {
     cb(null, file, fileContent);
 }
 
+function cleanCssRequires(fileContent) {
+    var lines = fileContent.split('\n');
+    return _.reject(lines, function(line) {
+        return line.indexOf('require(') >= 0 && line.indexOf('.css') >= 0;
+    }).join('\n');
+}
+
 function saveFile(file, fileContent, cb) {
     var folder;
-    file = file.replace('../', '../tmp/');
-    file = path.resolve(__dirname, file);
+    file = file.replace('/app/', '/tmp/app/');
     folder = file.split('/');
     folder.pop();
+    fileContent = cleanCssRequires(fileContent);
     mkpath(folder.join('/'), function() {
         fs.writeFile(file, fileContent, 'utf8', cb);
     });
