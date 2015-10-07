@@ -7,4 +7,4 @@ node_js:
 # Run the tests & submit code coverage data to Coveralls
 script: npm run travis
 
-sudo: required   # use container-based architecture; starts up faster
+sudo: false   # use container-based architecture; starts up faster
