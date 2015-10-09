@@ -52,7 +52,7 @@
     "glob": "^5.0.15",
     "google-client-api": "1.0.4",
     "jquery": "2.1.4",
-    "jsdom": "^3.1.1",
+    "jsdom": "^6.5.1",
     "jsx-loader": "0.13.2",
     "lodash": "3.10.1",
     "mkpath": "^0.1.0",
