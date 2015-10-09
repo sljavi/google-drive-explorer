@@ -13,7 +13,7 @@ module.exports = React.createClass({
         var file = this.props.file;
         return (
             <a href={file.alternateLink} className="file" target="_blank">
-                <img src={file.iconLink} /> {file.title}
+                <img src={file.iconLink} /> <span className="file-name">{file.title}</span>
             </a>
         );
     }
