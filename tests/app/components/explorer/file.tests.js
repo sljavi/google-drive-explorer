@@ -8,10 +8,6 @@ var
     assert = require('assert'),
     File = require('../../../../tmp/app/components/explorer/file.js');
 
-global.reactModulesToStub = [
-
-];
-
 describe('file', function() {
     jsdom();
 
