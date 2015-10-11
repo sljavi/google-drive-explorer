@@ -118,7 +118,7 @@ body {
 
 .cover {
   padding: 0 20px;
-  min-height: 320px;
+  min-height: 300px
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -150,6 +150,11 @@ body {
     position: fixed;
     bottom: 0;
   }
+  .cover {
+    position: fixed;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
@@ -157,6 +162,7 @@ body {
   /* Handle the widths */
   .masthead,
   .mastfoot,
+  .cover,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
@@ -165,7 +171,12 @@ body {
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
+  .cover,
   .cover-container {
     width: 700px;
+  }
+  .cover {
+    top: 50%;
+    transform: translate(0%, -50%);
   }
 }
