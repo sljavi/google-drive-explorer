@@ -6,26 +6,36 @@ var
     Explorer = require('./explorer/explorer'),
     Footer = require('./footer'),
     Header = require('./header'),
-    $ = require('jquery');
+    $ = require('jquery'),
+    actions = require('../actions/actions');
+
+var connectRedux = require('react-redux').connect;
 
 require('bootstrap.css');
 require('bootstrap-theme.css');
 require('../styles/theme.css');
 
-module.exports = React.createClass({
+var mainComponet = React.createClass({
     displayName: 'Main',
     propTypes: {
-        handleAuthClick: React.PropTypes.func.isRequired,
         requestAuthorization: React.PropTypes.bool.isRequired,
         files: React.PropTypes.array,
         loadingFiles: React.PropTypes.bool.isRequired,
         loadingClient: React.PropTypes.bool.isRequired
     },
+    componentDidMount: function() {
+        $(window).resize((function() {
+            this.forceUpdate();
+        }).bind(this));
+    },
+    handleAuthClick: function() {
+        this.props.dispatch(actions.authorizeGoogleClient());
+    },
     renderRequestAuthorization: function() {
         var props;
         if (this.props.requestAuthorization) {
             props = {
-                handleAuthClick: this.props.handleAuthClick,
+                handleAuthClick: this.handleAuthClick,
                 loadingClient: this.props.loadingClient
             };
             return <RequestAuthorization {...props} />;
@@ -71,3 +81,14 @@ module.exports = React.createClass({
         );
     }
 });
+
+function selectProps(state) {
+    return {
+        requestAuthorization: state.app.requestAuthorization,
+        files: state.app.files,
+        loadingFiles: state.app.loadingFiles,
+        loadingClient: state.app.loadingClient
+    };
+}
+
+module.exports = connectRedux(selectProps)(mainComponet);
