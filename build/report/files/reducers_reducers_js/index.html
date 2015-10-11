@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - main.js</title>
+  <title>Plato - reducers/reducers.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>main.js</h1>
+    <h1>reducers/reducers.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">61.34</p>
+      <p class="stat">85.94</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">16</p>
+      <p class="stat">51</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">5.16</p>
+      <p class="stat">18.21</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.12</p>
+      <p class="stat">0.29</p>
     </div>
   </div>
 </div>
@@ -91,20 +91,55 @@
   <div class="row">
     <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
 
-var
-    Main = require(&#039;./components/main&#039;),
-    React = require(&#039;react&#039;),
-    ReactDOM = require(&#039;react-dom&#039;),
-    configureStore = require(&#039;./store/configureStore&#039;),
-    Provider = require(&#039;react-redux&#039;).Provider,
-    actions = require(&#039;./actions/actions&#039;);
+var combineReducers = require(&#039;redux&#039;).combineReducers;
 
-var
-    store = configureStore(),
-    providerComponent = React.createElement(Provider, {store: store}, React.createElement(Main, null));
+var initialState = {
+    requestAuthorization: true,
+    files: [],
+    loadingFiles: false,
+    loadingClient: false
+};
 
-store.dispatch(actions.downloadGoogleClient());
-ReactDOM.render(providerComponent, document.getElementById(&#039;app&#039;));</textarea>
+var handlers = {
+    START_GOOGLE_CLIENT_DOWNLOAD: function(state) {
+        state.loadingClient = true;
+    },
+    END_GOOGLE_CLIENT_DOWNLOAD: function(state) {
+        state.loadingClient = false;
+    },
+    REQUEST_GOOGLE_CLIENT_AUTH: function(state) {
+        state.requestAuthorization = true;
+    },
+    DO_NOT_REQUEST_GOOGLE_CLIENT_AUTH: function(state) {
+        state.requestAuthorization = false;
+    },
+    START_FILES_DOWNLOAD: function(state) {
+        state.loadingFiles = true;
+    },
+    RECEIVE_DOWNLOADED_FILES: function(state, action) {
+        state.loadingFiles = false;
+        state.files = action.files;
+    },
+    START_AUTORIZE_GOOGLE_CLIENT: function(state) {
+        state.loadingClient = true;
+    },
+    END_AUTORIZE_GOOGLE_CLIENT: function(state) {
+        state.loadingClient = false;
+    }
+};
+
+function app(state, action) {
+    state = state || initialState;
+    if (handlers[action.type]) {
+        state = Object.assign({}, state);
+        handlers[action.type](state, action);
+    }
+    return state;
+};
+
+module.exports = combineReducers({
+    app: app
+});</textarea>
   </div>
 </div>
 
