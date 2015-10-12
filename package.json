@@ -37,7 +37,22 @@
     "node": "0.12.x"
   },
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "blanket": "^1.1.7",
+    "coveralls": "^2.11.4",
+    "eslint": "1.6.0",
+    "eslint-plugin-react": "3.5.1",
+    "glob": "^5.0.15",
+    "jsdom": "^3.1.1",
+    "mkpath": "^0.1.0",
+    "mocha": "^2.3.3",
+    "mocha-jsdom": "^1.0.0",
+    "mocha-lcov-reporter": "^1.0.0",
+    "plato": "sljavi/plato",
+    "react-addons-test-utils": "^0.14.0",
+    "react-tools": "^0.13.3",
+    "webpack-dev-server": "1.12.0"
+  },
   "dependencies": {
     "async": "1.4.2",
     "bootstrap": "3.3.5",
@@ -58,21 +73,6 @@
     "redux-thunk": "^1.0.0",
     "style-loader": "0.12.4",
     "webpack": "1.12.2"
-  },
-  "devDependencies": {
-    "blanket": "^1.1.7",
-    "coveralls": "^2.11.4",
-    "eslint": "1.6.0",
-    "eslint-plugin-react": "3.5.1",
-    "glob": "^5.0.15",
-    "jsdom": "^3.1.1",
-    "mkpath": "^0.1.0",
-    "mocha": "^2.3.3",
-    "mocha-jsdom": "^1.0.0",
-    "plato": "sljavi/plato",
-    "react-addons-test-utils": "^0.14.0",
-    "react-tools": "^0.13.3",
-    "webpack-dev-server": "1.12.0"
   },
   "config": {
     "blanket": {
