@@ -13,6 +13,7 @@ module.exports = React.createClass({
                         <ul className="nav masthead-nav">
                             <li className="active"><a href="/">Home</a></li>
                             <li><a href="/report" target="_blank">Report</a></li>
+                            <li><a href="/coverage.html" target="_blank">Coverage</a></li>
                             <li><a href="https://github.com/sljavi/google-drive-explorer" target="_blank">Github</a></li>
                         </ul>
                     </nav>
