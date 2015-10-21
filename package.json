@@ -57,7 +57,7 @@
     "async": "1.4.2",
     "bootstrap": "3.3.5",
     "classnames": "2.1.5",
-    "css-loader": "0.19.0",
+    "css-loader": "0.21.0",
     "express": "4.13.3",
     "file-loader": "^0.8.4",
     "google-client-api": "1.0.4",
