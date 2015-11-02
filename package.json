@@ -49,7 +49,7 @@
     "mocha-jsdom": "^1.0.0",
     "mocha-lcov-reporter": "^1.0.0",
     "plato": "sljavi/plato",
-    "react-addons-test-utils": "^0.14.0",
+    "react-addons-test-utils": "^0.14.2",
     "react-tools": "^0.13.3",
     "webpack-dev-server": "1.12.0"
   },
