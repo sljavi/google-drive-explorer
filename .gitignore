@@ -1,2 +1,8 @@
 node_modules/
 tmp/
+build/bundle*
+build/*.ttf
+build/*.eot
+build/*.woff
+build/*.woff2
+build/*.svg
