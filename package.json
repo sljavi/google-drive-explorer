@@ -39,7 +39,7 @@
   "homepage": "https://github.com/sljavi/google-drive-explorer#readme",
   "devDependencies": {
     "jsdom": "3.1.1",
-    "blanket": "1.2.1",
+    "blanket": "1.1.7",
     "coveralls": "2.11.6",
     "eslint": "1.10.3",
     "eslint-plugin-react": "3.11.3",
