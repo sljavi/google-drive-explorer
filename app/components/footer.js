@@ -8,7 +8,7 @@ module.exports = React.createClass({
         return (
             <div className="mastfoot clearfix">
                 <div className="inner">
-                    Ejemplo creado por <br /> Javier Perez - Pablo Miceli - Pablo Oviedo
+                    By Javier Perez
                 </div>
             </div>
         );
