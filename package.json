@@ -63,7 +63,7 @@
     "express": "4.13.3",
     "file-loader": "0.8.5",
     "google-client-api": "1.0.4",
-    "jquery": "2.1.4",
+    "jquery": "3.1.0",
     "jsx-loader": "0.13.2",
     "lodash": "3.10.1",
     "path": "0.12.7",
