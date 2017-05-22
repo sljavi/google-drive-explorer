@@ -55,7 +55,7 @@
     "webpack-dev-server": "1.14.0"
   },
   "dependencies": {
-    "async": "1.5.0",
+    "async": "2.4.1",
     "bootstrap": "3.3.6",
     "classnames": "2.2.1",
     "codacy-coverage": "^1.1.3",
